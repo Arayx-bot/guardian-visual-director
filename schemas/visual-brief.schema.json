@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momo.local/schemas/guardian-visual-brief-v1.json",
+  "title": "Guardian Structured Visual Brief V1",
+  "type": "object",
+  "required": [
+    "schema_version", "brief_meta", "design_principle", "evidence_chain", "personality_pattern", "core_contradiction", "emotional_meaning",
+    "guardian_identity", "archetype_role", "lore", "worldbuilding", "symbolic_motifs", "identity_translator", "humanoid_level", "human_identity_direction",
+    "preserved_cat_traits", "cat_residue", "distinction_fingerprint", "mythic_dna", "mythic_resonance", "original_guardian_concept",
+    "character_design", "facial_acting", "body_language", "story_beat", "cinematography",
+    "lighting", "environment", "narrative_moment", "visual_storytelling", "personal_resonance", "distinctiveness", "internal_scores",
+    "hard_constraints", "field_controls", "prompt_fields", "prompt_layers", "compiled_prompt", "automation", "preflight_qa"
+  ],
+  "properties": {
+    "schema_version": {"const": "guardian-visual-brief-v1"},
+    "design_principle": {"const": "Design the soul first. Design the character second. Add the cat last."},
+    "brief_meta": {
+      "type": "object",
+      "required": ["id", "subject_name", "stage", "rules_version", "source_schema", "deterministic_seed"],
+      "additionalProperties": true
+    },
+    "evidence_chain": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["evidence_ids", "behavioral_pattern", "personality_relationship_signal", "spirit_meaning", "mythic_dna", "original_concept", "visual_translation"],
+        "additionalProperties": true
+      }
+    },
+    "identity_translator": {
+      "type": "object",
+      "required": ["body_model", "face_model", "trait_translations", "reference_images", "uncertainties"],
+      "additionalProperties": true
+    },
+    "humanoid_level": {
+      "type": "object",
+      "required": ["target", "allowed_range", "anatomy_contract"],
+      "properties": {
+        "target": {"type": "number", "minimum": 0.8, "maximum": 0.95},
+        "allowed_range": {
+          "type": "array", "prefixItems": [{"type": "number", "minimum": 0.8}, {"type": "number", "maximum": 0.95}], "minItems": 2, "maxItems": 2
+        },
+        "anatomy_contract": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "human_identity_direction": {
+      "type": "object",
+      "required": ["mode", "cultural_context", "geographic_context", "modern_nationality", "ethnicity_reference", "appearance_direction", "casting_statement", "provenance_note", "uncertainties", "anti_stereotype_constraints", "culture_review_required"],
+      "additionalProperties": true
+    },
+    "preserved_cat_traits": {"type": "array", "items": {"$ref": "#/$defs/trait"}},
+    "personality_pattern": {"type": "object", "required": ["statement", "evidence_ids", "relationship_expression"], "additionalProperties": true},
+    "core_contradiction": {"type": "object", "required": ["two_truths", "visual_rule", "source", "evidence_ids"], "additionalProperties": true},
+    "emotional_meaning": {"type": "object", "required": ["owner_meaning", "protected_truth", "evidence_ids"], "additionalProperties": true},
+    "guardian_identity": {"type": "object", "required": ["identity_statement", "title", "protected_subject", "world_function"], "additionalProperties": true},
+    "archetype_role": {"type": "object", "required": ["archetype", "narrative_function", "not_a_personality_label"], "additionalProperties": true},
+    "lore": {"type": "object", "required": ["why_exists", "protects", "belongs_to", "symbol_causality", "defining_pattern"], "additionalProperties": true},
+    "worldbuilding": {"type": "object", "required": ["world_rule", "guardian_function", "social_read"], "additionalProperties": true},
+    "symbolic_motifs": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "object", "required": ["motif", "meaning", "evidence_ids"], "additionalProperties": true}},
+    "cat_residue": {
+      "type": "object",
+      "required": ["application_order", "human_visual_structure_percent", "feline_residue_percent", "behavioral_residue", "selected_visual_channels", "decorative_stack_forbidden", "first_read", "second_read"],
+      "properties": {
+        "human_visual_structure_percent": {"type": "number", "minimum": 80, "maximum": 95},
+        "feline_residue_percent": {"type": "number", "minimum": 5, "maximum": 20},
+        "selected_visual_channels": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "object"}}
+      },
+      "additionalProperties": true
+    },
+    "distinction_fingerprint": {"type": "object", "required": ["primary_signal", "secondary_signals", "contradiction", "unlike_same_spirit"], "additionalProperties": true},
+    "mythic_dna": {"type": "object", "required": ["deep_meaning", "motifs", "abstraction_rule", "literal_elements_prohibited"], "additionalProperties": true},
+    "mythic_resonance": {"type": "object", "required": ["placement", "lineage", "allowed_uses", "forbidden_equation"], "additionalProperties": true},
+    "original_guardian_concept": {"type": "object", "required": ["title", "role", "core_verb", "power_logic", "originality_statement"], "additionalProperties": true},
+    "character_design": {
+      "type": "object",
+      "required": ["render_style", "shape_language", "silhouette", "costume", "artifact_symbol", "palette", "value_architecture", "palette_relationship", "recognition_anchors"],
+      "additionalProperties": true
+    },
+    "facial_acting": {"type": "object", "required": ["intention", "eyes_gaze", "mouth_jaw", "brows_cheeks", "intensity"], "additionalProperties": true},
+    "body_language": {"type": "object", "required": ["intention", "pose", "weight_distribution", "line_of_action", "hands", "tail", "silhouette_read"], "additionalProperties": true},
+    "story_beat": {"type": "object", "required": ["before", "trigger", "now", "emotional_shift", "implied_next"], "additionalProperties": true},
+    "cinematography": {
+      "type": "object",
+      "required": ["shot", "lens", "camera_angle", "composition", "subject_occupancy_ratio", "headroom_ratio", "depth_plan", "negative_space", "focal_hierarchy", "visual_balance"],
+      "properties": {
+        "subject_occupancy_ratio": {"type": "number", "minimum": 0.5, "maximum": 0.9},
+        "headroom_ratio": {"type": "number", "minimum": 0.04, "maximum": 0.2},
+        "focal_hierarchy": {"type": "string", "minLength": 1},
+        "visual_balance": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "lighting": {"type": "object", "required": ["key", "fill", "identity_readability", "meaning"], "additionalProperties": true},
+    "environment": {
+      "type": "object",
+      "required": ["setting", "presentation_mode", "presentation_design", "story_affordances", "subject_hierarchy", "complexity_budget", "detail_density", "contrast_ceiling", "prohibited_clutter", "free_variation"],
+      "properties": {
+        "presentation_mode": {"enum": ["game_character_select_stage", "graphic_field", "minimal_diorama", "narrative_splash"]},
+        "presentation_design": {
+          "type": "object",
+          "required": ["grounding", "backdrop_fields", "identity_motif", "atmospheric_layer", "artifact_response"],
+          "properties": {
+            "grounding": {"type": "string", "minLength": 1},
+            "backdrop_fields": {"type": "string", "minLength": 1},
+            "identity_motif": {"type": "string", "minLength": 1},
+            "atmospheric_layer": {"type": "string", "minLength": 1},
+            "artifact_response": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "complexity_budget": {
+          "type": "object",
+          "required": ["mode", "primary_architectural_motifs_max", "material_families_max", "decorative_props_max", "background_people_max"],
+          "additionalProperties": false
+        },
+        "detail_density": {"type": "string", "minLength": 1},
+        "contrast_ceiling": {"type": "string", "minLength": 1},
+        "prohibited_clutter": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "narrative_moment": {"type": "string", "minLength": 1},
+    "visual_storytelling": {"type": "object", "required": ["principle", "element_rationales", "decoration_rejected"], "additionalProperties": true},
+    "personal_resonance": {"type": "object", "required": ["owner_recognition_anchors", "swap_test", "private_symbol", "ears_tail_removal_test", "owner_truth_test"], "additionalProperties": true},
+    "distinctiveness": {"type": "object", "required": ["identity", "lore", "contradiction", "silhouette", "motif", "owner_specific", "anti_template_actions"], "additionalProperties": true},
+    "internal_scores": {"type": "object", "required": ["behavior_fidelity", "personality_specificity", "contradiction_strength", "identity_originality", "lore_coherence", "symbolic_coherence", "silhouette_distinctiveness", "visual_storytelling", "feline_subtlety", "personal_resonance", "genericness_risk", "retry_required"], "additionalProperties": true},
+    "hard_constraints": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "field_controls": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/control"}},
+    "prompt_fields": {
+      "type": "object",
+      "required": ["guardian_identity", "core_personality", "core_contradiction", "archetype", "lore_context", "silhouette", "body_language", "costume_logic", "symbolic_motifs", "props", "feline_residue", "facial_direction", "material_language", "visual_tone"],
+      "additionalProperties": true
+    },
+    "prompt_layers": {
+      "type": "object",
+      "required": ["identity", "meaning_mythic_dna", "visual_design", "acting", "story_beat", "cinematography", "scene", "constraints"],
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "compiled_prompt": {"type": "object", "required": ["positive_prompt", "negative_prompt", "prompt_hash"], "additionalProperties": true},
+    "automation": {"type": "object", "required": ["candidate_generation", "seed_policy", "image_qa_checks", "auto_selection", "retry_policy", "canon_policy"], "additionalProperties": true},
+    "preflight_qa": {"type": "object", "required": ["status", "checks", "image_qa_status"], "additionalProperties": true}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "trait": {
+      "type": "object",
+      "required": ["id", "kind", "source_description", "visual_translation", "confidence", "mutability", "priority"],
+      "properties": {
+        "id": {"type": "string"}, "kind": {"type": "string"}, "source_description": {"type": "string"},
+        "visual_translation": {"type": "string"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "mutability": {"const": "LOCKED"}, "priority": {"const": "P0"}
+      },
+      "additionalProperties": false
+    },
+    "control": {
+      "type": "object",
+      "required": ["path", "mutability", "priority", "reason"],
+      "properties": {
+        "path": {"type": "string"},
+        "mutability": {"enum": ["LOCKED", "DERIVED", "CONTROLLED", "FREE"]},
+        "priority": {"enum": ["P0", "P1", "P2", "P3"]},
+        "reason": {"type": "string"},
+        "bounds": {}
+      },
+      "additionalProperties": false
+    }
+  }
+}

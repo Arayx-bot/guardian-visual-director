@@ -1,0 +1,4 @@
+interface:
+  display_name: "Guardian Visual Director"
+  short_description: "将猫咪证据转为稳定的强类人 Guardian OC 视觉导演方案"
+  default_prompt: "Use $guardian-visual-director to turn this Guardian evidence into a structured humanoid OC visual brief and image prompt."

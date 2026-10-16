@@ -1,0 +1,102 @@
+{
+  "schema_version": "director-input-v1",
+  "input_meta": {
+    "id": "synthetic-demo-cat",
+    "stage": "explore",
+    "language": "en"
+  },
+  "subject": {
+    "display_name": "Synthetic Demo Cat",
+    "species": "cat",
+    "sex": "unknown",
+    "photo_identity": {
+      "traits": [
+        {
+          "id": "synthetic-coat",
+          "kind": "coat_color",
+          "description": "Imaginary blue-grey coat",
+          "confidence": 1.0
+        },
+        {
+          "id": "synthetic-eye",
+          "kind": "eyes",
+          "description": "Imaginary amber eyes",
+          "confidence": 1.0
+        },
+        {
+          "id": "synthetic-tail",
+          "kind": "tail",
+          "description": "Imaginary white tail tip",
+          "confidence": 1.0
+        }
+      ],
+      "reference_images": []
+    }
+  },
+  "evidence": [
+    {
+      "id": "synthetic-e1",
+      "context": "Invented visitor scene",
+      "observation": "The imaginary cat pauses at a doorway and watches.",
+      "action": "Wait at the threshold",
+      "outcome": "Chooses to approach later",
+      "signals": [
+        "boundary",
+        "observation",
+        "caution"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "synthetic-e2",
+      "context": "Invented quiet scene",
+      "observation": "The imaginary cat returns after a pause.",
+      "action": "Return voluntarily",
+      "outcome": "Resumes contact at a distance",
+      "signals": [
+        "return",
+        "attachment"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "synthetic-e3",
+      "context": "Invented exploration scene",
+      "observation": "The imaginary cat looks around an empty box.",
+      "action": "Explore gradually",
+      "outcome": "Enters after checking",
+      "signals": [
+        "exploration",
+        "caution"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "spirit": {
+    "dominant": "Synthetic cautious explorer",
+    "statement": "An invented example balancing curiosity and distance.",
+    "relationship_signal": "Voluntary return",
+    "contradiction": "Approach while keeping room to withdraw",
+    "power": "Preserve the choice to reconnect"
+  },
+  "mythic_dna": {
+    "meaning": "An invented threshold metaphor, with no claim to a historical tradition.",
+    "motifs": [
+      "threshold",
+      "return"
+    ],
+    "source_traditions": [],
+    "prohibited_literal_elements": [
+      "named deity replicas"
+    ],
+    "culture_review_required": false
+  },
+  "guardian_lore": {},
+  "direction_request": {
+    "humanoid_level": 0.86
+  },
+  "canon": {
+    "locked_fields": {},
+    "reference_image_ids": []
+  }
+}
